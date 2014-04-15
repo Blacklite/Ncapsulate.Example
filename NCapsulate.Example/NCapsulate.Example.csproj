@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>77790c03</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>5f90d3aa</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -270,7 +270,8 @@
     <Content Include="package.json" />
     <Content Include="Scripts\app\library.js" />
     <Content Include="Scripts\app\_bootstrap.js" />
-    <Content Include="Scripts\build\app.all.js" />
+    <Content Include="Scripts\build\app.js" />
+    <Content Include="Scripts\build\app.min.js" />
     <Content Include="Scripts\require.config.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />

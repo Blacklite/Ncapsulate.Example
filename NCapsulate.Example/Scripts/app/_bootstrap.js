@@ -1,1 +1,1 @@
-﻿require(['./_run']);
+﻿require(['app/_run']);

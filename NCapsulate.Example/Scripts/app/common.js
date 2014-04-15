@@ -1,5 +1,4 @@
-﻿
-window.common = (function () {
+﻿define(function () {
     var common = {};
 
     common.getFragment = function getFragment() {
@@ -42,4 +41,4 @@ window.common = (function () {
     }
 
     return common;
-})();
+});

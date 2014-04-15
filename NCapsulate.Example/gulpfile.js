@@ -5,23 +5,24 @@ var gulp = require('gulp'),
     optimize = require('requirejs').optimize;
 
 gulp.task('requirejs', [], function() {
-    _.each(requireConf.paths, function(x, i) {
-        if (_.isArray(x))
-            requireConf.paths[i] = 'empty:';
-    });
+    var defer = Q.defer();
 
-    util.log(requireConf);
-
-    var cfg = _.extend({}, requireConf, {
+    optimize({
         baseUrl: 'Scripts',
         mainConfigFile: 'Scripts/require.config.js',
         optimize: 'none',
-        out: 'Scrits/build/app.js',
-        name: 'app/_run',
-    });
-
-    var defer = Q.defer();
-
-    optimize(cfg, defer.resolve);
+        out: 'Scripts/build/app.js',
+        name: 'app/_bootstrap',
+    }, defer.resolve);
     return defer.promise;
+});
+
+var uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
+
+gulp.task('min', [], function() {
+    gulp.src('Scripts/build/app.js')
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('Scripts/build'));
 });

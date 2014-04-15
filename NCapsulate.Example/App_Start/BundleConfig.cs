@@ -44,7 +44,8 @@ namespace NCapsulate.Example
 
             bundles.Add(new ScriptBundle("~/bundles/app")
                 .Include(
-                     "~/Scripts/app/_bootstrap.js"
+                     "~/bower_components/requirejs/require.js",
+                     "~/Scripts/build/app.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css")

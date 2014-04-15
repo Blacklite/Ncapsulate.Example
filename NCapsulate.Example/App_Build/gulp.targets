@@ -1,11 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Examples of using Gulp at different phases of your build process -->
-  <!--
-  <Target Name="Gulp-BeforeBuild" BeforeTargets="BeforeBuild">
-    <Gulp Tasks="copy-lib-to-build" />
+
+  <ItemGroup>
+    <RequireJsInput Include="$(MSBuildProjectDirectory)\Scripts\app\**\*.js" />
+    <RequireJsBuild Include="$(MSBuildProjectDirectory)\Scripts\build\app.js" />
+    <RequireJsBuildMin Include="$(MSBuildProjectDirectory)\Scripts\build\app.min.js" />
+  </ItemGroup>
+  <Target Name="Gulp-BeforeBuild" BeforeTargets="BeforeBuild;Bower;Npm" Inputs="@(RequireJsInput)" Outputs="@(RequireJsBuild)">
+    <Gulp Tasks="requirejs" />
   </Target>
-  -->
+  <Target Name="Gulp-Min" AfterTargets="Gulp-BeforeBuild" Inputs="@(RequireJsBuild)" Outputs="@(RequireJsBuildMin)">
+    <Gulp Tasks="min" />
+  </Target>
+  
   <!--
   <Target Name="Gulp-BeforeCompile" BeforeTargets="BeforeCompile">
     <Gulp Tasks="compile-js compile-css" />
