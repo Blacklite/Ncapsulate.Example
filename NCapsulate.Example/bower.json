@@ -1,0 +1,33 @@
+{
+  "name": "NCapsulate.Example",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Blacklite/NCapsulate.Example",
+  "authors": [
+    "David Driscoll <david.driscoll@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout.js": "~3.0.0",
+    "jquery": "1.10.2",
+    "knockout-validation": "~1.0.2",
+    "bootstrap": "~3.1.1",
+    "respond": "~1.4.2",
+    "modernizr": "2.6.2",
+    "sammy": "0.7.4",
+    "requirejs": "~2.1.11",
+    "Microsoft.jQuery.Unobtrusive.Validation": "~3.1.1",
+    "Microsoft.jQuery.Unobtrusive.Ajax": "~3.1.1"
+  }
+}

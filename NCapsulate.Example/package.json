@@ -1,0 +1,28 @@
+{
+  "name": "NCapsulate.Example",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Blacklite/NCapsulate.Example"
+  },
+  "keywords": [
+    "ncapsulate"
+  ],
+  "author": "David Driscoll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Blacklite/NCapsulate.Example/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-util": "^2.2.14",
+    "lodash": "^2.4.1",
+    "q": "^1.0.1",
+    "requirejs": "^2.1.11"
+  }
+}
