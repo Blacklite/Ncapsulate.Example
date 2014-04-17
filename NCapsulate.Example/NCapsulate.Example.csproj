@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>5f90d3aa</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>3d47c28f</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,9 +104,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ncapsulate.Gulp.3.6.0\lib\net45\Ncapsulate.Gulp.dll</HintPath>
     </Reference>
+    <Reference Include="Ncapsulate.Karma, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ncapsulate.Karma.0.12.9\lib\net45\Ncapsulate.Karma.dll</HintPath>
+    </Reference>
     <Reference Include="Ncapsulate.Node, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ncapsulate.Gulp.3.6.0\lib\net45\Ncapsulate.Node.dll</HintPath>
+      <HintPath>..\packages\Ncapsulate.Karma.0.12.9\lib\net45\Ncapsulate.Node.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -267,18 +271,21 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="bower.json" />
     <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="package.json" />
     <Content Include="Scripts\app\library.js" />
     <Content Include="Scripts\app\_bootstrap.js" />
     <Content Include="Scripts\build\app.js" />
     <Content Include="Scripts\build\app.min.js" />
     <Content Include="Scripts\require.config.js" />
+    <Content Include="Scripts\test\datamodelSpec.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
     <Content Include="Scripts\app\app.viewmodel.js" />
     <Content Include="Scripts\app\common.js" />
     <Content Include="Scripts\app\home.viewmodel.js" />
+    <Content Include="test-main.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmUser.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -327,6 +334,8 @@
     <Content Include="App_Build\node.targets" />
     <Content Include="App_Build\bower.targets" />
     <Content Include="App_Build\gulp.targets" />
+    <Content Include="karma.cmd" />
+    <Content Include="App_Build\karma.targets" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
@@ -365,9 +374,11 @@
     <Error Condition="!Exists('..\packages\Ncapsulate.Node.0.10.26\build\Ncapsulate.Node.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Node.0.10.26\build\Ncapsulate.Node.targets'))" />
     <Error Condition="!Exists('..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets'))" />
     <Error Condition="!Exists('..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets'))" />
+    <Error Condition="!Exists('..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets'))" />
   </Target>
   <Import Project="..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets" Condition="Exists('..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets')" />
   <Import Project="..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets" Condition="Exists('..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets')" />
+  <Import Project="..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets" Condition="Exists('..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
