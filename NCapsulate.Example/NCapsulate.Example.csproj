@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>3d47c28f</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>8a0bf82f</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,21 +100,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ncapsulate.Bower.1.3.2\lib\net45\Ncapsulate.Bower.dll</HintPath>
     </Reference>
-    <Reference Include="Ncapsulate.Grunt">
+    <Reference Include="Ncapsulate.Grunt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ncapsulate.Grunt.0.4.4\lib\net45\Ncapsulate.Grunt.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="Ncapsulate.Gulp">
+    <Reference Include="Ncapsulate.Gulp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ncapsulate.Gulp.3.6.1\lib\net45\Ncapsulate.Gulp.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Ncapsulate.Karma, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ncapsulate.Karma.0.12.9\lib\net45\Ncapsulate.Karma.dll</HintPath>
     </Reference>
-    <Reference Include="Ncapsulate.Node">
-      <HintPath>..\packages\Ncapsulate.Gulp.3.6.1\lib\net45\Ncapsulate.Node.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Ncapsulate.Node, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ncapsulate.Grunt.0.4.4\lib\net45\Ncapsulate.Node.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -380,12 +380,14 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Ncapsulate.Node.0.10.26\build\Ncapsulate.Node.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Node.0.10.26\build\Ncapsulate.Node.targets'))" />
     <Error Condition="!Exists('..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets'))" />
-    <Error Condition="!Exists('..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets'))" />
     <Error Condition="!Exists('..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets'))" />
+    <Error Condition="!Exists('..\packages\Ncapsulate.Gulp.3.6.1\build\Ncapsulate.Gulp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Gulp.3.6.1\build\Ncapsulate.Gulp.targets'))" />
+    <Error Condition="!Exists('..\packages\Ncapsulate.Grunt.0.4.4\build\Ncapsulate.Grunt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ncapsulate.Grunt.0.4.4\build\Ncapsulate.Grunt.targets'))" />
   </Target>
   <Import Project="..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets" Condition="Exists('..\packages\Ncapsulate.Bower.1.3.2\build\Ncapsulate.Bower.targets')" />
-  <Import Project="..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets" Condition="Exists('..\packages\Ncapsulate.Gulp.3.6.0\build\Ncapsulate.Gulp.targets')" />
   <Import Project="..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets" Condition="Exists('..\packages\Ncapsulate.Karma.0.12.9\build\Ncapsulate.Karma.targets')" />
+  <Import Project="..\packages\Ncapsulate.Gulp.3.6.1\build\Ncapsulate.Gulp.targets" Condition="Exists('..\packages\Ncapsulate.Gulp.3.6.1\build\Ncapsulate.Gulp.targets')" />
+  <Import Project="..\packages\Ncapsulate.Grunt.0.4.4\build\Ncapsulate.Grunt.targets" Condition="Exists('..\packages\Ncapsulate.Grunt.0.4.4\build\Ncapsulate.Grunt.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
